@@ -7,6 +7,15 @@ def finder(files, queries):
     YOUR CODE HERE
     """
     # Your code here
+    lasts = []
+    result = []
+    for path in files:
+        final = path.split("/")
+        lasts.append(final[-1])
+    for i in lasts:
+        if i in queries:
+            result.append(i)
+
 
     return result
 
