@@ -10,16 +10,21 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
     # Your code here
-    route = [0] * length
+
+    #initialize array
+    route = []
     cache = {}
 
+    #map ticket source to key and destination to value
     for ticket in tickets:
         cache[ticket.source] = ticket.destination
-    
+
+    #set initial current to first location that has key "NONE"
     current = cache["NONE"]
 
-    for i in range(0,length):
-        route[i] = current
+    #set all locations in route by using destination as next key
+    for i in range(length):
+        route.append(current)
         current = cache[current]
 
 
