@@ -4,12 +4,11 @@ def has_negatives(a):
     """
     # Your code here
     result = []
-    cache = {}
+    cache = dict.fromkeys(a)
     for i in a:
-        cache[i] = i
         #checks if i has a negative counterpart in the cache
-        if i !=0 and -i in cache:
-            result.append(abs(i))
+        if -i in cache and i > 0:
+            result.append(i)
    
 
     return result
