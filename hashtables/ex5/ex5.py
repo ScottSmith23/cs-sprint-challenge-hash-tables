@@ -7,15 +7,12 @@ def finder(files, queries):
     YOUR CODE HERE
     """
     # Your code here
-    lasts = []
+    cache = dict.fromkeys(queries)
     result = []
     for path in files:
         final = path.split("/")
-        lasts.append(final[-1])
-    for i in lasts:
-        if i in queries:
-            result.append(i)
-
+        if final[-1] in cache:
+            result.append(path)
 
     return result
 
